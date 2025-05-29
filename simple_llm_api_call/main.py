@@ -21,6 +21,7 @@ def send_request_to_model(user_input):
     return response
 
 def main():
+    # Chat context, optional
     chat_history = []
     print('Type "exit" to quit.')
 
@@ -49,6 +50,7 @@ def main():
             print('Exception sending request to model: {}'.format(e))
 
         if model_output_text is not None:
+            # Append the model output to the chat history
             chat_history.append({
                 "role": "assistant",
                 "content": model_output_text
